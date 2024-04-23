@@ -5,11 +5,11 @@ from sensor import Sensor
 from client import Client
 
 c = Client()
+s1 = Sensor(1)
+s2 = Sensor(2)
 
-def test_send_data():
-    s1 = Sensor(1)
-    s2 = Sensor(2)
-
+@pytest.fixture(scope="module", autouse=True)
+def setup():
     for _ in range(10):
         s1.send_data()
         s2.send_data()
@@ -23,3 +23,4 @@ def test_check_dataframe():
 
     assert isinstance(df, pd.DataFrame)
     assert df.loc[0, "sensor_id"] == 1, "wrong sensor ID"
+    assert len(df) == 10

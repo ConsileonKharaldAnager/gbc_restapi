@@ -27,25 +27,16 @@ class Dataset:
 ds = Dataset()
 
 
-@app.route('/', methods=['GET', 'POST'])
-def simple_request():
-    d = {'message': 'Hej!'}
-    return json.dumps(d)
-
-@app.route('/save_signal', methods=['POST'])
+@app.route('/save_signal')  # TODO: add an appropriate method
 def save_signal():
-    request_data = request.get_json()
-    request_set = set(request_data.keys())
-    subset = ds.cols
-    if subset.issubset(request_set):
-        ds.add_row(request_data["sensor_id"], request_data["timestamp"], request_data["value"])
-        return jsonify(message="Signal is received", data=request_data), 200
-    else:
-        return jsonify(message="Signal is incorrect"), 500
+    # TODO: use request to get data from sensor and save them in ds;
+    # TODO: don't forget to check if there are all required data
+    pass
 
-@app.route('/get_sensor/<int:sensor_id>', methods=["GET"])
+
+@app.route('/get_sensor')  # TODO: append!!! the endpoint and add an appropriate method
 def get_sensor(sensor_id):
-    return jsonify(ds.select_sensor(sensor_id)), 200
+    pass  # TODO: send all data from dataset of given sensor_id
 
 @app.route('/get_sensor_ids', methods=['GET'])
 def get_ids():
