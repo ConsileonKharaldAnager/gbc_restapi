@@ -3,3 +3,7 @@ requests~=2.31.0
 numpy~=1.26.4
 Flask~=3.0.3
 pytest~=8.1.1
+fastapi~=0.110.2
+pydantic~=2.7.1
+python-jose~=3.3.0
+python-multipart~=0.0.9
