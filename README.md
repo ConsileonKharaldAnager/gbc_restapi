@@ -54,4 +54,28 @@ Code. But! Remember that tests cannot prove absence of bugs.
 
 ## Task 2: FastApi
 
-#### Start server: uvicorn server_fastapi:app --reload
+Start server:
+ 
+    $ uvicorn server_fastapi:app --reload
+
+Instructions are placed in the file server_fastapi.py.
+Follow the instruction to complete the missing lines
+of code. In order to test the code open api docs in your
+browser.
+
+After starting the server you will receive something
+like that:
+
+    INFO:     Will watch for changes in these directories: ['C:\\Users\\kAnager\\PycharmProjects\\gbc_restapi']
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit) <- URL!!!
+    INFO:     Started reloader process [10912] using WatchFiles              
+    INFO:     Started server process [21488]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
+
+Test your code on With http://127.0.0.1:8000/docs.
+
+Criteria:
+1) Implemented 4 Methods: GET, POST, PUT, DELETE
+2) GET method returns a request without passwords
+2) all 4 methods require authentication 
